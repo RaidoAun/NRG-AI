@@ -13,7 +13,6 @@ class bird{
         this.fitness = 0;
         this.closest = null
         this.best = false
-        //kui on aju juba ette antud, siis loo koopia
         if (brain){
             this.brain = brain.copy()
             this.color = color;
@@ -55,7 +54,6 @@ class bird{
     }
     jump(){
         let inputs = []
-        //loob sisendid, mis anda tehisnärvivõrgule
         inputs.push(this.y)
         inputs.push(this.speed)
         inputs.push(this.closest.x)

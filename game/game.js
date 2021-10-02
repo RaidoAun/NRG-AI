@@ -49,7 +49,6 @@ function testON(){
 function testOFF(){
     testing = false
 }
-//treenimisega tegelev funktsioon
 function training(amount){
     let correct = 0
     let wrong = 0
@@ -159,7 +158,6 @@ canvas.addEventListener("click", function (event) {
     mouseY = event.clientY - 8 - 10
     shoot()
 })
-//kuuli class
 function bulletgen(x, y, r, color, power, angle) {
     this.x = x
     this.y = y

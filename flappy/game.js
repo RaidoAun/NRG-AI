@@ -22,7 +22,6 @@ let generation = 0;
 let timer = 0;
 let pipes=[]
 let birds = [];
-//lindude arv, kes korraga mängivad
 let birdcount = 400;
 let SPEED = 1
 let alivecount = birdcount
@@ -31,7 +30,6 @@ best_scoretext.innerText = "Best Score: "+bestscore
 current_gentext.innerText = "Generation: "+generation
 alivecounttext.innerText = "Alive: "+alivecount
 startgame();
-//mängu loop
 function frameupdate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ekraanile joonistamine
@@ -154,7 +152,6 @@ function contains(targetA, targetB) {
              (targetB.y + targetB.height) < targetA.y);
   }
 
-//toru klass, võib olla ka kirjas nii: class toru{constructor(x,y,h,gap,color)}
 function pipe(x,w,h,gap,color){
     this.x = x;
     this.w = w;

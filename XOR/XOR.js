@@ -1,4 +1,4 @@
-let nn = new Neural_Network(2, [10,10], 1)
+let nn = new Neural_Network(2, [5], 1)
 nn.randomize_weights()
 nn.learning_rate = 0.1
 for (let i = 0;i<30000;i++){

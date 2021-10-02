@@ -1,12 +1,4 @@
-/*
-Mida võiks proovida muuta:
-fitness funktsiooni ehk muuta arvu x astet.
-shooter.js failis outputide arvu.
-tingimust, millal luuakse uus generatsioon
-test_count, shooter_count muutujat
-uue generatsiooni funktsioone
-Mõndades nendest kohtadest on koodis juba kommentaarina olemas näide.
-*/
+
 let canvas = document.createElement("canvas");
 let current_gentext = document.createElement("p");
 let show_best = document.getElementById("best_box")
@@ -20,9 +12,8 @@ canvas.width = 500;
 canvas.height = 400;
 document.body.appendChild(canvas);
 document.body.appendChild(current_gentext);
-//algsete muutujate loomine
 let maxDist = (canvas.width**2 + canvas.height**2)**0.5
-let interval = 16//mis aja tagant jooksutada mängu loogikat (ms)
+let interval = 16 //(ms)
 let bulletSize = 5
 let playerWidth = 30
 let playerHeight = 30
@@ -35,7 +26,7 @@ let bullet_hit_target = false
 let counter = 0
 let player = new character(canvas.width-playerWidth, canvas.height - playerHeight, playerWidth, playerHeight, "black")
 let target = new character(0,0,targetSize,targetSize)
-let newCount = shooter_count/2 //uues generatsioonis juhuslikult loodud närvivõrkude arv
+let newCount = shooter_count/2
 form1.elements[1].value=newCount
 let testing = false
 let SPEED = readInput()[0]
@@ -43,7 +34,6 @@ let generation = 0
 let target_pos_index = 0
 current_gentext.innerText = "Generation: "+generation
 newTarget()
-//objektide loomine, mängu alustamine
 for (let i = 0; i < shooter_count; i++) {
     shooters[i] = new Shooter()
 }
@@ -51,9 +41,7 @@ for (let i = 0; i < shooter_count; i++) {
 function frameupdate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     player.draw()
-    //ei pea koguaeg joonistama, for loop teeb mängu arvutusi SPEED arv kordi ja peale seda joonistab
     for (let i = 0; i < SPEED; i++) {
-        //tingimus, millal luua uus märk
         if (countAlive() === 0){//(countAlive() === 0) // || bullet_hit_target
             for (let i = 0; i < shooter_count; i++) {
                 shooters[i].shoot()
@@ -63,7 +51,6 @@ function frameupdate() {
                 
                 generation+=1
                 current_gentext.innerText = "Generation: "+generation
-                //valida kumbki uue generatsiooni funktsioonidest, selgitused all
                 //shooters = nextGen(shooters)
                 shooters = nextCrossOverGen(shooters)
                 counter = 0

@@ -22,7 +22,6 @@ class Shooter{
         inputs.push(target.x)
         inputs.push(target.y)
         let guess = this.brain.feed_forward(inputs)
-        //brain.feed_forward() väljastab listi, mille pikkuseks on outputi suurus
         let angle = (guess[0]*110)-10
         let power = guess[1]*15
         this.bullet = new bulletGen(player.x + playerHeight / 2, player.y, bulletSize, this.color, power, angle)
@@ -33,7 +32,6 @@ class Shooter{
             if (this.bullet.x < 0 || this.bullet.x > canvas.width || this.bullet.y > canvas.height || this.bullet.y<-(canvas.height/2)) {
                 this.bullet.alive = false
             }
-            //kui kuul puudutab märki
             if (RectCircleColliding(this.bullet, target, 0)) {
                 this.bullet.alive = false
                 //võimalusel saab kuuli kauguse muutujat tabamisel muuta, et tabamine oleks tähtsam.
@@ -80,12 +78,9 @@ class bulletGen{
     update(){
         this.speed += this.gravity
         let newDist = calcDistance(this.x, this.y, target.x + targetSize / 2, target.y + targetSize / 2) - bulletSize
-        //kui uus kaugus on väiksem kui eelnev
         if (this.distance > newDist){
-            //paneb objekti kauguse võrduma uue kaugusega
             this.distance = newDist 
         }
-        //kuuli liikumise loogika
         this.x -= Math.cos(this.angle * Math.PI / 180) * this.power
         this.y -= Math.sin(this.angle * Math.PI / 180) * this.power - this.speed
     }
