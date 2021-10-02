@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="frm1">
+        Speed: <input type="number" name="speed" value=1><br>
+        Newcount: <input type="number" name="newcount" value=0><br>
+        Interval (ms): <input type="number" name="interval" value=16><br><br>
+    </form>
+    <button onclick="changeSpeed()">Change speed</button>
+    <button onclick="changeSpeedtoOne()">Speed 1</button><br>
+    <button onclick="changeNewCount()">Change NewCount</button><br>
+    <button onclick="changeInterval()">Change Interval</button>
+    <button onclick="setIntervalto16()">Interval 16</button><br>
+    <input type="checkbox" id="best_box">
+    <label for="best_box"> Show best</label><br>
+    <input type="checkbox" id="freeze_target">
+    <label for="freeze_target"> Freeze target</label><br>
+    <input type="checkbox" id="random_target">
+    <label for="random_target"> Random target</label><br>
+    <script src="lib/matrixmath.js"></script>
+    <script src="lib/NeuralNetwork.js"></script>
+    <script src="lib/evolution.js"></script>
+    <script src="game1/shooter.js"></script>
+    <script src="game1/game1.js"></script>
+</body>
+</html>

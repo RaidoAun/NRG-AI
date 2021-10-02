@@ -1,0 +1,10 @@
+canvas{
+    border: 10px solid black;
+    margin: auto;
+    display: block;
+    border-color: black;
+}
+p{
+    text-align: center;
+    font-size:150%;
+}

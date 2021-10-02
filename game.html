@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="frm1">
+        Power: <input type="number" name="power" value=0><br>
+        Angle: <input type="number" name="angle" value=0><br><br>
+    </form>
+    <button onclick="shoot()">Shoot</button>
+    <button onclick="train()">Train</button>
+    <button onclick="testON()">Test on</button>
+    <button onclick="testOFF()">Test off</button>
+    <script src="lib/matrixmath.js"></script>
+    <script src="lib/NeuralNetwork.js"></script>
+    <script src="game/game.js"></script>
+</body>
+</html>
